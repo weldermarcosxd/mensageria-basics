@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Producer", "src\Producer\Producer.csproj", "{A5CCF455-DDB1-481F-BBE1-A02C4DDA828C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consumer", "src\Consumer\Consumer.csproj", "{651DBDAC-91EC-4A56-AEAD-B0D7C0358675}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5CCF455-DDB1-481F-BBE1-A02C4DDA828C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5CCF455-DDB1-481F-BBE1-A02C4DDA828C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5CCF455-DDB1-481F-BBE1-A02C4DDA828C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5CCF455-DDB1-481F-BBE1-A02C4DDA828C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{651DBDAC-91EC-4A56-AEAD-B0D7C0358675}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{651DBDAC-91EC-4A56-AEAD-B0D7C0358675}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{651DBDAC-91EC-4A56-AEAD-B0D7C0358675}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{651DBDAC-91EC-4A56-AEAD-B0D7C0358675}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
