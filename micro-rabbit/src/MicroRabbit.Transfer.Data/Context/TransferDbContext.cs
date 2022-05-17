@@ -1,3 +1,4 @@
+using MicroRabbit.Transfer.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace MicroRabbit.Transfer.Data.Context
@@ -7,5 +8,7 @@ namespace MicroRabbit.Transfer.Data.Context
         public TransferDbContext(DbContextOptions dbContextOptions) : base(dbContextOptions)
         {
         }
+
+        public DbSet<TransferLog> TransferLogs { get; set; }
     }
 }
