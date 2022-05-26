@@ -24,8 +24,21 @@ namespace MicroRabbit.Infra.IoC
         public static void RegisterServices(IServiceCollection services)
         {
             // Rabbit
-            services.AddTransient<IEventBus, RabbitMqBus>();
+            services.AddSingleton<IEventBus, RabbitMqBus>(sp =>
+            {
+                var scopeFactory = sp.GetRequiredService<IServiceScopeFactory>();
+                return new RabbitMqBus(sp.GetRequiredService<IMediator>(), scopeFactory);
+            });
             
+            // Subscriptions
+            services.AddTransient<TransferEventHandler>();
+
+            //Events
+            services.AddTransient<IEventHandler<TransferCreatedEvent>, TransferEventHandler>();
+            
+            //Domain Banking Commands
+            services.AddTransient<IRequestHandler<CreateTransferCommand, bool>, TransferCommandHandler>();
+
             // Services  
             services.AddTransient<IAccountService, AccountService>();
             services.AddTransient<ITransferService, TransferService>();
@@ -37,12 +50,6 @@ namespace MicroRabbit.Infra.IoC
             // Contextes
             services.AddTransient<BankingDbContext>();
             services.AddTransient<TransferDbContext>();
-            
-            //Domain Banking Commands
-            services.AddTransient<IRequestHandler<CreateTransferCommand, bool>, TransferCommandHandler>();
-
-            //Events
-            services.AddTransient<IEventHandler<TransferCreatedEvent>, TransferEventHandler>();
         }
     }
 }

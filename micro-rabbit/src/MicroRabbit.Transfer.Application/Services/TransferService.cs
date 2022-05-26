@@ -9,13 +9,11 @@ namespace MicroRabbit.Transfer.Application.Services
 {
     public class TransferService : ITransferService
     {
-        private readonly IEventBus _eventBus;
         private readonly ITransferRepository _transferRepository;
 
-        public TransferService(ITransferRepository transferRepository, IEventBus eventBus)
+        public TransferService(ITransferRepository transferRepository)
         {
             _transferRepository = transferRepository;
-            _eventBus = eventBus;
         }
 
         public IEnumerable<TransferLog> GetTransferLogsAsync(CancellationToken cancellationToken) => _transferRepository.GetTransferLogsAsync(cancellationToken);
